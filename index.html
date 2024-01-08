@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weight Tracker App</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weight Tracker</h1>
+
+      <div>
+        <label for="datePicker">Select Date:</label>
+        <input type="date" id="datePicker" />
+
+        <label for="timePicker">Select Time:</label>
+        <input type="time" id="timePicker" />
+
+        <label for="weightInput">Enter Weight (in kg):</label>
+        <input type="number" id="weightInput" step="0.1" />
+
+        <button onclick="addWeight()">Add Weight</button>
+        <button onclick="openHistoryPage()">History</button>
+      </div>
+
+      <div id="weightChart"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

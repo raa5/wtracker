@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weight Tracker - History</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weight Tracker History</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date and Time</th>
+            <th>Weight (kg)</th>
+          </tr>
+        </thead>
+        <tbody id="historyTableBody"></tbody>
+      </table>
+
+      <button onclick="goBack()">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load history data from localStorage
+        const storedData = localStorage.getItem("weightData");
+        const dataPoints = storedData ? JSON.parse(storedData) : [];
+
+        // Sort dataPoints in descending order by date and time
+        const sortedDataPoints = dataPoints.sort(
+          (a, b) => new Date(b.dateTime) - new Date(a.dateTime)
+        );
+
+        // Display history data in a table
+        const historyTableBody = document.getElementById("historyTableBody");
+        sortedDataPoints.forEach((point) => {
+          const row = document.createElement("tr");
+          const dateCell = document.createElement("td");
+          const weightCell = document.createElement("td");
+
+          dateCell.textContent = point.dateTime;
+          weightCell.textContent = point.weight.toFixed(1);
+
+          row.appendChild(dateCell);
+          row.appendChild(weightCell);
+          historyTableBody.appendChild(row);
+        });
+      });
+
+      // Function to go back to the index.html page
+      window.goBack = () => {
+        window.location.href = "index.html";
+      };
+    </script>
+  </body>
+</html>

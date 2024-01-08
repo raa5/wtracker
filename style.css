@@ -1,0 +1,65 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust the width for larger screens */
+  max-width: 400px; /* Set a maximum width for better readability on larger screens */
+}
+
+h1 {
+  color: #333;
+}
+
+label {
+  margin-right: 10px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+button {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+canvas {
+  display: block;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make the chart take up full width */
+}
+
+/* Media query for screens smaller than 600px (phones) */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
